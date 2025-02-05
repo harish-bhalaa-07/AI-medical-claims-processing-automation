@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Claims Processing Assistant</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+<!-- Favicons -->
+<link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon">
+<link href="{{ url_for('static', filename='img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+
+  <!-- Main CSS File -->
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #1e3a57;
+      margin: 0;
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .progress-container {
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+    }
+
+    .progress-step {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin: 35px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease-in-out;
+    }
+
+    .progress-step.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .progress-step .circle {
+      height: 45px;
+      width: 45px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      border: 4px solid #9aa7c6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      color: #9aa7c6;
+      transition: background-color 0.6s, border-color 0.6s, transform 0.3s;
+      position: relative;
+    }
+
+    .progress-step .circle.completed {
+      background-color: #76c7c0;
+      border-color: #76c7c0;
+      color: white;
+      animation: bounce 0.5s ease;
+    }
+
+    .progress-step .circle.completed::after {
+      content: "✔";
+      position: absolute;
+      font-size: 24px;
+      color: green;
+    }
+
+    .progress-step .line {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 45px;
+      height: 70px;
+      width: 4px;
+      background-color: #9aa7c6;
+      transition: background-color 0.6s;
+    }
+
+    .progress-step:last-child .line {
+      display: none;
+    }
+
+    .progress-step .line.active {
+      background-color: #76c7c0;
+    }
+
+    .progress-text {
+      font-size: 16px;
+      margin-left: 20px;
+      color: white;
+      letter-spacing: 0.5px;
+    }
+
+    /* Smooth fade-in animation for step transitions */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* Health-related background GIF */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://media.giphy.com/media/U6ZTpgC7jZTU5Q8sR1/giphy.gif') center/cover;
+      opacity: 0.15;
+      z-index: -1;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">CLAIM PROCESSING</h1>
+      </a>
+
+      <nav style="margin-right: 200px;" id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="#">Raise Claim</a></li>
+          <li><a href="index.html">About</a></li>
+          <li><a href="index.html">Why us</a></li>
+          <li><a href="index.html">Services</a></li>
+          <li><a href="index.html">Team</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="progress-container">
+      <div class="progress-step">
+        <div class="circle">1</div>
+        <div class="line"></div>
+        <span class="progress-text">Step 1: Patient has policy</span>
+      </div>
+
+      <div class="progress-step">
+        <div class="circle">2</div>
+        <div class="line"></div>
+        <span class="progress-text">Step 2: Dates checked</span>
+      </div>
+
+      <div class="progress-step">
+        <div class="circle">3</div>
+        <div class="line"></div>
+        <span class="progress-text">Step 3: Diagnosis covered</span>
+      </div>
+
+      <div class="progress-step">
+        <div class="circle">4</div>
+        <div class="line"></div>
+        <span class="progress-text">Step 4: Doctor checked</span>
+      </div>
+
+      <div class="progress-step">
+        <div class="circle">5</div>
+        <div class="line"></div>
+        <span class="progress-text">Step 5: Consistency checked</span>
+      </div>
+
+      <div class="progress-step">
+        <div class="circle">6</div>
+        <span class="progress-text">Step 6: Necessary checked</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const steps = document.querySelectorAll(".progress-step");
+    let currentStep = 0;
+  
+    // Simulate the status passed from Flask backend
+    const claimStatus = {{ claim_status | tojson }};  // Passed from Flask
+  
+    // Step Conditions based on claim status
+    const conditions = [
+      () => claimStatus.has_policy,             // Step 1: Check if patient has policy
+      () => claimStatus.dates_covered,
+      () => claimStatus.diagnosis_covered,      // Step 2: Diagnosis covered under policy
+      () => claimStatus.doctor_checked,
+      () => claimStatus.consistency_checked,    // Step 3: Consistency check passed
+      () => claimStatus.necessary_checked       // Step 4: Treatment necessary check passed
+    ];
+  
+    function nextStep() {
+      if (currentStep < steps.length && conditions[currentStep]()) {
+        const step = steps[currentStep];
+        const circle = step.querySelector('.circle');
+        const line = step.querySelector('.line');
+  
+        // Activate the current circle with color fill
+        circle.classList.add('completed');
+        step.classList.add('visible');
+  
+        if (line) {
+          line.classList.add('active');
+        }
+  
+        currentStep++;
+      } else if (currentStep < steps.length && !conditions[currentStep]()) {
+        // Redirect to Flask error route if condition is not met
+        setTimeout(() => window.location.href = "{{ url_for('error') }}", 1000);  // Redirect after 1 second
+        return;
+      }
+    }
+  
+    document.addEventListener('DOMContentLoaded', () => {
+      const interval = setInterval(() => {
+        if (currentStep < steps.length) {
+          nextStep();
+        } else {
+          clearInterval(interval); // Stop interval when all steps are completed
+          setTimeout(() => window.location.href = "{{ url_for('success') }}", 1000);  // Redirect after 1 second
+        }
+      }, 2000);  // Time interval between steps
+    });
+  </script>
+</body>
+</html>

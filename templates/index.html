@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Claims Processing Assistant</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/logo.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='img/logo.png') }}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt="">   class="nav-link" -->
+        <h1 class="sitename">CLAIM PROCESSING</h1>
+      </a>
+
+      <nav style="margin-right: 200px;" id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="/raise_claim">Raise Claim</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#why-us">Why us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#team">Team</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+            <h1>Better Processing of your Insurance Claims</h1>
+            <p>Efficiently process the insurance claim with AI</p>
+          </div>
+          <div style="padding-top: 90px; margin-left: 60px; height: 600px; width: 600px" class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{{ url_for('static', filename='img/hero-img.png') }}" class="img-fluid animated" alt="">
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About Us</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4" style="margin-bottom: 100px;">
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100" >
+            <p>
+              Welcome to Claims Processing Assistant, your trusted partner in streamlining and simplifying the complex world of medical claims processing. Our mission is to provide an innovative and efficient solution that ensures accurate and timely management of healthcare claims, allowing both patients and healthcare providers to focus on what truly matters—quality care and peace of mind.
+            </p>
+            <ul>
+              <li style="font-weight:bold;"><i style="padding-bottom: 22px;" class="bi bi-check2-circle"></i> <span>Efficiency: We use AI to process claims quickly and accurately, ensuring consistent verification and minimizing errors.</span></li>
+              <li style="font-weight:bold;"><i style="padding-bottom: 22px;" class="bi bi-check2-circle"></i> <span>Transparency: Our platform provides clear explanations for every decision, building trust among all parties.</span></li>
+              <li style="font-weight:bold;"><i style="padding-bottom: 22px;" class="bi bi-check2-circle"></i> <span>Patient-Centric: We ensure fair and prompt claim assessments, helping patients understand and navigate their coverage with ease.</span></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <p>At Claims Processing Assistant, we believe that navigating the intricate web of medical claims shouldn’t be a daunting task. Our platform is designed with state-of-the-art technology to handle every step of the claims process, from initial submission to final settlement, with unparalleled accuracy and efficiency. We understand that each claim is unique, and our system is built to adapt to the specific needs of every policy, ensuring that every diagnosis, treatment, and associated documentation is meticulously reviewed and verified.</p>
+            <p>Our team of experts continuously works to refine our platform, incorporating the latest advancements in technology and regulatory requirements to ensure that we remain at the forefront of the industry. We are dedicated to providing a seamless and stress-free experience for all our users, empowering them to navigate the medical claims process with ease.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="section why-us light-background" data-builder="section">
+
+      <div class="container-fluid">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+
+            <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
+              <h3><span></span><strong>Why us?</strong></h3>
+              <p>
+                Trust us to handle your claims with the utmost care and integrity.
+              </p>
+            </div>
+
+            <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="faq-item faq-active">
+
+                <h3><span>01</span>What is the innovation?</h3>
+                <div class="faq-content">
+                  <p> Our platform isn't just about technology; it's about leading the way in claims processing innovation. By integrating AI and machine learning, we not only expedite the claims process but also continually adapt and improve, learning from each interaction to enhance accuracy and efficiency over time.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span>02</span>What is the purpose?</h3>
+                <div class="faq-content">
+                  <p>From verifying medical records to assessing policy coverage, we offer an all-in-one solution that handles even the most complex claims with ease. From initial submission to final settlement, our system intelligently coordinates all aspects, including document verification, policy assessment, and medical record analysis, ensuring nothing is overlooked.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span>03</span> Is there transparency?</h3>
+                <div class="faq-content">
+                  <p>Our system provides clear, detailed explanations for every decision, ensuring you stay informed and confident throughout the process. Transparency is at the heart of our operations. We believe that you should have full visibility into the status and reasoning behind every claim decision. Our detailed reports and real-time updates ensure you’re always informed and in control, fostering trust and peace of mind.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2 why-us-img">
+            <img src="{{ url_for('static', filename='img/why-us.png') }}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Why Us Section -->
+
+   
+    <!-- Services Section -->
+    <section id="services" class="services section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Comprehensive Solutions Tailored to Your Needs</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-activity icon"></i></div>
+              <h4><a href="" class="stretched-link">Intelligent Document Processing</a></h4>
+              <p>Automatically extracts, categorizes, and validates claim-related documents, enhancing workflow efficiency.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
+              <h4><a href="" class="stretched-link">Automated Claims Processing</a></h4>
+              <p>AI-powered claim evaluation significantly speeds up the process while ensuring accuracy.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
+              <h4><a href="" class="stretched-link">Consistency & Necessary Check</a></h4>
+              <p>LLM checks the consistency of diagnosis and treatmnets, ensures the necessity of treatment.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-broadcast icon"></i></div>
+              <h4><a href="" class="stretched-link">Bill Amount Processing</a></h4>
+              <p>Leverages AI to accurately calculate the reimbursable amount based on verified claim details, ensuring that users receive the correct payout.
+              </p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <p>Meet the hands of coordination behind this success.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member d-flex align-items-start">
+              <div class="pic"><img src="{{ url_for('static', filename='img/men.png') }}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4 style="padding-top: 15px;">Harish Bhalaa</h4>
+                <span>AI & ML, Backend</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-github"></i></a>
+                  <a href=""> <i class="bi bi-linkedin"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member d-flex align-items-start">
+              <div class="pic"><img src="{{ url_for('static', filename='img/men.png') }}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4 style="padding-top: 15px;">Shasteeswaran Ravianand Tharmiya</h4>
+                <span>AI & ML, Backend</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-github"></i></a>
+                  <a href=""> <i class="bi bi-linkedin"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member d-flex align-items-start">
+              <div class="pic"><img src="{{ url_for('static', filename='img/women.png') }}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4 style="padding-top: 15px;">Subashini</h4>
+                <span>AI & ML</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-github"></i></a>
+                  <a href=""> <i class="bi bi-linkedin"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member d-flex align-items-start">
+              <div class="pic"><img src="{{ url_for('static', filename='img/women.png') }}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4 style="padding-top: 15px;">Sowmiya</h4>
+                <span>AI & ML</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-github"></i></a>
+                  <a href=""> <i class="bi bi-linkedin"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member d-flex align-items-start">
+              <div class="pic"><img src="{{ url_for('static', filename='img/women.png') }}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4 style="padding-top: 15px;">Keertheswari</h4>
+                <span>Frontend</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-github"></i></a>
+                  <a href=""> <i class="bi bi-linkedin"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member d-flex align-items-start">
+              <div class="pic"><img src="{{ url_for('static', filename='img/women.png') }}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4 style="padding-top: 15px;">Hariynie</h4>
+                <span>Frontend</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-github"></i></a>
+                  <a href=""> <i class="bi bi-linkedin"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+   
+
+
+    <!-- Faq 2 Section -->
+    <section id="faq-2" class="faq-2 section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything You Need to Know. Addressing Your Common Concerns.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-10">
+
+            <div class="faq-container">
+
+              <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>What happens if my claim is denied?</h3>
+                <div class="faq-content">
+                  <p>If your claim is denied, our platform provides a detailed explanation, outlining the reasons for the decision. You can review the feedback and, if necessary, submit additional documentation or request a re-evaluation.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>How do I know if my treatment is covered by my insurance policy?</h3>
+                <div class="faq-content">
+                  <p>Our system automatically matches the diagnosis from your medical report with your policy coverage details, ensuring that only eligible treatments are approved. You’ll receive a clear summary of what is covered and what is not.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>How quickly will my claim be processed? </h3>
+                <div class="faq-content">
+                  <p>Our platform is designed for efficiency, with most claims processed within 5-10 minutes. Complex cases may take longer, but we strive to ensure prompt handling of all claims.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>How does the Claims Processing Assistant ensure the accuracy of my claim?</h3>
+                <div class="faq-content">
+                  <p>We use advanced AI and machine learning algorithms to verify medical records, match ICD codes, and assess the consistency of diagnosis and treatment, ensuring that your claim is processed with precision.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>How do I submit the necessary documents for my claim?</h3>
+                <div class="faq-content">
+                  <p>You can easily upload all required documents directly through our secure online portal. Our system will guide you through the process, ensuring that all necessary information is included.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Faq 2 Section -->
+
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">CLAIMS PROCESSING ASSISTANT</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Empowering healthcare providers with efficient and accurate claims processing. Our solution leverages AI-driven technology to ensure that your claims are handled swiftly, accurately, and transparently.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Raise Claim</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Medical Claims Processing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Policy Verification</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Claim Validation</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Decision Support System</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Follow Us</h4>
+          <div class="social-links d-flex">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-github"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/waypoints/noframework.waypoints.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  
+
+  <!-- Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
